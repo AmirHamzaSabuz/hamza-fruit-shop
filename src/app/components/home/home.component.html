@@ -1,0 +1,29 @@
+<div class="body">
+    <div class="row">
+        <div
+            class="col col-12 col-md-6 col-lg-4"
+            *ngFor="let good of goods; index as i"
+        >
+            <div
+                class="card"
+                style="width: 18rem;"
+            >
+                <img
+                    [src]="good.photoUrl"
+                    class="card-img-top"
+                    [alt]="good.name"
+                >
+                <div class="card-body">
+                    <h5 class="card-title">{{ good.name | titlecase }}</h5>
+                    <p class="card-text">{{ good.price | currency }}</p>
+                    <button
+                        class="btn btn-primary"
+                        (click)="addToCart(i)"
+                    >
+                        Add to cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
