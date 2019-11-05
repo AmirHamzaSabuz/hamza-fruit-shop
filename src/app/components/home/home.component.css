@@ -4,3 +4,10 @@
 .card {
 	margin: 5px;
 }
+.btn {
+	background-color: #c128f6;
+	color: #ffffff;
+}
+.body {
+	margin-top: 50px;
+}

@@ -1,35 +1,95 @@
+<nav
+    class="navbar navbar-expand-lg fixed-top"
+    style="background-color:#c128f6;"
+>
+    <div class="container">
+        <a
+            class="navbar-brand"
+            routerLink="/"
+        >
+            <b>Hamza Fruit Shop</b>
+        </a>
+        <button
+            (click)="toggleNavbar()"
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <a class="navbar-brand" routerLink="/">Hamza Fruit Shop</a>
-    <button (click)="toggleNavbar()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <div
+            class="collapse navbar-collapse"
+            [class.show]="isOpen"
+            id="navbarSupportedContent"
+        >
+            <ul class="navbar-nav mr-auto">
 
-    <div class="collapse navbar-collapse" [class.show]="isOpen" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item ">
-          <a class="nav-link " routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/cart" routerLinkActive="active">Cart</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/admin" routerLinkActive="active">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/signup" routerLinkActive="active">Signup</a>
-        </li>
-        <li class="nav-item">
-          <button class="btn ">Logout</button>
-        </li>
-      </ul>
+                <li
+                    class="nav-item"
+                    *ngIf="isUser"
+                >
+                    <a
+                        class="nav-link"
+                        routerLink="/cart"
+                        routerLinkActive="active"
+                    >
+                        Cart
+                    </a>
+                </li>
+                <li
+                    class="nav-item"
+                    *ngIf="isAdmin && isUser"
+                >
+                    <a
+                        class="nav-link"
+                        routerLink="/admin"
+                        routerLinkActive="active"
+                    >
+                        Dashboard
+                    </a>
+                </li>
+                <li
+                    class="nav-item"
+                    *ngIf="!isUser"
+                >
+                    <a
+                        class="nav-link"
+                        routerLink="/login"
+                        routerLinkActive="active"
+                    >
+                        Login
+                    </a>
+                </li>
+                <li
+                    class="nav-item"
+                    *ngIf="!isUser"
+                >
+                    <a
+                        class="nav-link"
+                        routerLink="/signup"
+                        routerLinkActive="active"
+                    >
+                        Signup
+                    </a>
+                </li>
+                <li
+                    class="nav-item"
+                    *ngIf="isUser"
+                >
+                    <button
+                        class="btn"
+                        (click)="logout()"
+                    >
+                        Logout
+                    </button>
+                </li>
+            </ul>
 
+        </div>
     </div>
-  </div>
 </nav>
-
-

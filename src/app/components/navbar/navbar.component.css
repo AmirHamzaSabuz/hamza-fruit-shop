@@ -1,0 +1,20 @@
+.navbar-brand {
+	color: #ffffff;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.navbar-brand:hover {
+	color: #eaeaea;
+}
+
+.nav-link {
+	color: white;
+}
+.nav-link:hover {
+	color: #eaeaea;
+}
+.btn {
+	color: white;
+}
+.btn:hover {
+	color: #eaeaea;
+}

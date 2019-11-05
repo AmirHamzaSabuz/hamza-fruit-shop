@@ -17,11 +17,26 @@
                     <h5 class="card-title">{{ good.name | titlecase }}</h5>
                     <p class="card-text">{{ good.price | currency }}</p>
                     <button
-                        class="btn btn-primary"
+                        class="btn "
                         (click)="addToCart(i)"
+                        *ngIf="add !== i"
                     >
                         Add to cart
                     </button>
+                    <div *ngIf="add === i">
+                        <input
+                            type="number"
+                            class="form-control"
+                            placeholder="Amount(kg)"
+                            #amount
+                        >
+                        <button
+                            class="btn "
+                            (click)="buy(amount.value)"
+                        >
+                            Buy
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

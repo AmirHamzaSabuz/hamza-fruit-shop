@@ -1,8 +1,10 @@
-<div class="body">
+<div class="body" >
     <h2 class="text-center">Log In</h2>
-    <form
+    <div class="form">
+      <form
         #f="ngForm"
         (ngSubmit)="login(f)"
+        style="width: 70%;"
     >
         <input
             ngModel
@@ -47,17 +49,18 @@
             class="alert alert-danger"
             *ngIf="password.touched && password.errors?.minlength"
         >
-            Password should be 6+
-      charachters
+            Password should be 6+ charachters
         </div>
 
         <button
-            class="btn btn-primary"
+            class="btn btn-primary form-control"
             [disabled]="f.invalid"
         >
             Login
         </button>
     </form>
+    </div>
+
     <br>
     <div
         class="alert alert-danger"

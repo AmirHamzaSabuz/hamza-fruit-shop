@@ -1,8 +1,10 @@
 <div class="body">
     <h2 class="text-center">Sign Up</h2>
+    <div class="form">
     <form
         #f="ngForm"
         (ngSubmit)="signup(f)"
+        style="width: 70%;"
     >
         <input
             ngModel
@@ -20,7 +22,7 @@
             Name is required
         </div>
 
-        <br>
+
 
         <input
             ngModel
@@ -45,7 +47,7 @@
             Your input doesn't match email format
         </div>
 
-        <br>
+
 
         <input
             ngModel
@@ -70,7 +72,7 @@
             Password should be 6+ charachters
         </div>
 
-        <br>
+
 
         <input
             ngModel
@@ -94,7 +96,7 @@
             Passwords are not equal
         </div>
 
-        <br>
+
 
         <input
             ngModel
@@ -112,15 +114,17 @@
             Address is required
         </div>
 
-        <br>
+
 
         <button
-            class="btn btn-primary"
+            class="btn btn-primary form-control"
             [disabled]="f.invalid || passwordConfirm.value !== password.value"
         >
             Create account
         </button>
     </form>
+    </div>
+
     <br>
     <div
         class="alert alert-danger"

@@ -1,1 +1,47 @@
-<p>cart works!</p>
+<div class="body">
+    <table
+        class="table   table-hover"
+        style="text-align:center"
+    >
+        <thead>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Amount</th>
+            <th>Total</th>
+            <th>Options</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let good of cart; index as i">
+                <td>{{good.name | titlecase}}</td>
+                <td>{{good.price | currency}}</td>
+                <td>
+                    <input
+                        class="form-control"
+                        type="number"
+                        placeholder="Amount (kg)"
+                        [(ngModel)]="good.amount"
+                    >
+                </td>
+                <td>
+                    {{(good.price * good.amount) | currency}}
+                </td>
+                <td>
+                    <button
+                        class="btn btn-primary"
+                        (click)="save(i)"
+                    >
+                        Save
+                    </button>
+
+                    <button
+                        class="btn btn-danger"
+                        (click)="delete(i)"
+                    >
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

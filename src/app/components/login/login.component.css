@@ -1,0 +1,21 @@
+.form-control {
+	margin-bottom: 7px;
+}
+div.form {
+	display: block;
+	text-align: center;
+}
+form {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+input.form-control {
+	border-color: #a1d379;
+
+	border-width: 2px;
+}
+.body {
+	margin-top: 50px;
+}
