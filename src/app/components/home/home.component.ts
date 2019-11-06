@@ -19,11 +19,12 @@ export class HomeComponent implements OnInit, OnDestroy {
 	add: number = -1;
 
 	constructor(
-    private gs: GoodsService,
-    private cs: CartService,
-    private notifyService: NotificationService,
-    private as: AuthService,
-    private router: Router) {}
+		private gs: GoodsService,
+		private cs: CartService,
+		private notifyService: NotificationService,
+		private as: AuthService,
+		private router: Router
+	) {}
 
 	ngOnInit() {
 		this.goodsObservable = this.gs.getAllGoods().subscribe((data) => {
@@ -37,13 +38,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 	}
 
 	addToCart(index) {
-		if(this.as.userId) {
-      this.add = +index;
-    }
-    else{
-
-      this.router.navigate(['/login']);
-    }
+		if (this.as.userId) {
+			this.add = +index;
+		} else {
+			this.router.navigate([ '/login' ]);
+		}
 	}
 
 	buy(amount: number) {
@@ -58,7 +57,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 			this.cs.addToCart(data).then(() => (this.add = -1));
 			this.notifyService.showToast('Saved successfully !!', 'Thank you', 'success');
 		} else {
-      this.add = -1;
+			this.add = -1;
 			this.notifyService.showToast('Amount can not be less than .5 kg', 'Error', 'error');
 		}
 	}

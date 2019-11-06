@@ -25,6 +25,8 @@ import { AuthService } from './services/auth.service';
 import { UserService } from './services/user.service';
 import { NotificationService } from './services/notification.service';
 import { CartService } from './services/cart.service';
+import { FooterComponent } from './components/footer/footer.component';
+
 
 @NgModule({
 	declarations: [
@@ -35,7 +37,9 @@ import { CartService } from './services/cart.service';
 		SignupComponent,
 		CartComponent,
 		NotFoundComponent,
-		NavbarComponent
+		NavbarComponent,
+		FooterComponent,
+	
 	],
 	imports: [
 		BrowserModule,

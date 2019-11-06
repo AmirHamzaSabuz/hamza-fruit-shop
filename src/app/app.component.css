@@ -4,3 +4,11 @@ app-navbar {
 .nav {
 	margin-bottom: 15px;
 }
+
+#footerDiv {
+	position: fixed;
+
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
